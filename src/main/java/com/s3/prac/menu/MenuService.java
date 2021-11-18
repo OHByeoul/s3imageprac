@@ -26,6 +26,8 @@ public class MenuService {
         int random = (int)Math.random()*100;
         List<Menu> allMenu = menuRepository.findAll();
         int size = allMenu.size();
+        if(size == 0)
+            return "없음";
         int index = random%size;
         return allMenu.get(index).getName();
     }
